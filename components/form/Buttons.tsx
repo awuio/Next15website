@@ -23,7 +23,7 @@ export const SubmitButton = ({
         disabled={pending}
         type="submit"
         size={size}
-        className="{`${className} capitalize`}"
+        className={`${className} capitalize`}
     >
         {
             pending
@@ -31,6 +31,5 @@ export const SubmitButton = ({
                 : <p>{text}</p>
         }
 
-        {text}
     </Button>
 }
