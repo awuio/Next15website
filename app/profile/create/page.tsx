@@ -1,5 +1,5 @@
 import { SubmitButton } from "@/components/form/Buttons";
-import Forminput from "@/components/form/forminput";
+import FormInput from "@/components/form/FormInput";
 import { Button } from "@/components/ui/button";
 
 const createProfileAction = async (formData: FormData) => {
@@ -16,17 +16,17 @@ const CreateProfilePage = () => {
           <form action={createProfileAction}>
             <div className=" grid md:grid-cols-2 gap-4 mt-4">
 
-              <Forminput
+              <FormInput
                 name="firstName"
                 label="Fist Name"
                 type="text"
                 placeholder="First name"
               />
-              <Forminput name="lastName"
+              <FormInput name="lastName"
                 label="Last Name"
                 type="text"
                 placeholder="Last name" />
-              <Forminput
+              <FormInput
                 name="userName"
                 label="User Name"
                 type="text"

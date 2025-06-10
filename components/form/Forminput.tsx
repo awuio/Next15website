@@ -2,14 +2,14 @@ import React from 'react'
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 
-type ForminputProps = {
+type FormInputProps = {
     name: string
     type: string
     label?: string
     defaultValue?: string
     placeholder?: string
 }
-const Forminput = (props: ForminputProps) => {
+const FormInput = (props: FormInputProps) => {
     const { name, type, label, defaultValue, placeholder } = props;
     console.log(props.name)
     return (
@@ -24,4 +24,4 @@ const Forminput = (props: ForminputProps) => {
     )
 }
 
-export default Forminput
+export default FormInput
