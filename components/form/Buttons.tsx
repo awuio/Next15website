@@ -27,7 +27,10 @@ export const SubmitButton = ({
     >
         {
             pending
-                ? <RefreshCw className=" animate-spin" />
+                ? <>
+                <RefreshCw className=" animate-spin" />
+                <span>Please wait ...</span>
+                </>
                 : <p>{text}</p>
         }
 
