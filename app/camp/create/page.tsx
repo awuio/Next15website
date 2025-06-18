@@ -5,6 +5,7 @@ import FormContainer from "@/components/form/FormContainer";
 import FormInput from "@/components/form/FormInput";
 import ProvinceInput from "@/components/form/ProvinceInput";
 import TextAreaInput from "@/components/form/TextAreaInput";
+import MapLandmark from "@/components/map/MapLandmark";
 import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
@@ -39,6 +40,7 @@ const CreateProfilePage = async () => {
             <ProvinceInput />
           </div>
 
+          <MapLandmark />
           <SubmitButton text="Create Landmark" size="sm" className="" />
         </FormContainer>
       </div>
