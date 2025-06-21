@@ -32,13 +32,13 @@ const DropdownListmenu = () => {
           <SignedOut>
             <DropdownMenuItem asChild className=" w-full">
               <SignInButton mode="modal">
-                <button>Login</button>
+                Login
               </SignInButton>
             </DropdownMenuItem>
 
             <DropdownMenuItem asChild className=" w-full">
               <SignUpButton mode='modal'>
-                <button>Sign up</button>
+                Sign up
               </SignUpButton>
             </DropdownMenuItem>
           </SignedOut>

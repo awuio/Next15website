@@ -7,11 +7,16 @@ const initalState = {
   message: "",
 };
 
-
-
-const FormContainer = ({ action, children }: {action:actionFunction, children: React.ReactNode }) => {
+const FormContainer = ({
+  action,
+  children,
+}: {
+  action: actionFunction;
+  children: React.ReactNode;
+}) => {
   const [state, formAction] = useActionState(action, initalState);
-  console.log("state ja", state);
+  // console.log("state ja", state);
+
   useEffect(() => {
     //code
     if (state.message) {

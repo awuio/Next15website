@@ -3,13 +3,14 @@ import { SubmitButton } from "@/components/form/Buttons";
 import CategoryInput from "@/components/form/CategoryInput";
 import FormContainer from "@/components/form/FormContainer";
 import FormInput from "@/components/form/FormInput";
+import ImageInput from "@/components/form/ImageInput";
 import ProvinceInput from "@/components/form/ProvinceInput";
 import TextAreaInput from "@/components/form/TextAreaInput";
 import MapLandmark from "@/components/map/MapLandmark";
 import { currentUser } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
-const CreateProfilePage = async () => {
+const CreateProfile = async () => {
   return (
     <section>
       <h1 className=" text-2xl font-semibold mb-8 capitalize">
@@ -39,7 +40,8 @@ const CreateProfilePage = async () => {
 
             <ProvinceInput />
           </div>
-
+        <ImageInput/>
+        
           <MapLandmark />
           <SubmitButton text="Create Landmark" size="sm" className="" />
         </FormContainer>
@@ -47,4 +49,4 @@ const CreateProfilePage = async () => {
     </section>
   );
 };
-export default CreateProfilePage;
+export default CreateProfile;

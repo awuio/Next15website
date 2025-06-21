@@ -9,7 +9,7 @@ import {
 import { provinces } from "@/utils/provinces";
 
 const ProvinceInput = ({ defaultValue }: { defaultValue?: string }) => {
-  const name = "provinces";
+  const name = "province";
 
   return (
     <div className=" mb-2">

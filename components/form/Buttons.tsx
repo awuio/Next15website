@@ -25,14 +25,13 @@ export const SubmitButton = ({
         size={size}
         className={`${className} capitalize`}
     >
-        {
-            pending
-                ? <>
-                <RefreshCw className=" animate-spin" />
-                <span>Please wait ...</span>
-                </>
-                : <p>{text}</p>
-        }
-
+        {pending ? (
+        <>
+          <RefreshCw className="animate-spin" />
+          <span>Please wait...</span>
+        </>
+      ) : (
+        <p>{text}</p>
+      )}
     </Button>
 }
