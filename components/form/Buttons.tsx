@@ -1,31 +1,29 @@
 "use client";
 import { useFormStatus } from "react-dom";
 import { Button } from "../ui/button";
-import { RefreshCw } from 'lucide-react';
+import { Heart, RefreshCw } from "lucide-react";
+import { SignInButton } from "@clerk/nextjs";
 
-type btnSize = 'default' | 'lg' | 'sm'
+type btnSize = "default" | "lg" | "sm";
 
 type SubmitButtonProps = {
-    className?: string;
-    size?: btnSize;
-    text?: string;
-}
+  className?: string;
+  size?: btnSize;
+  text?: string;
+};
 
-export const SubmitButton = ({
-    className,
-    size,
-    text,
-}: SubmitButtonProps) => {
-    //code
-    const { pending } = useFormStatus();
+export const SubmitButton = ({ className, size, text }: SubmitButtonProps) => {
+  //code
+  const { pending } = useFormStatus();
 
-    return <Button
-        disabled={pending}
-        type="submit"
-        size={size}
-        className={`${className} capitalize`}
+  return (
+    <Button
+      disabled={pending}
+      type="submit"
+      size={size}
+      className={`${className} capitalize`}
     >
-        {pending ? (
+      {pending ? (
         <>
           <RefreshCw className="animate-spin" />
           <span>Please wait...</span>
@@ -34,4 +32,20 @@ export const SubmitButton = ({
         <p>{text}</p>
       )}
     </Button>
-}
+  );
+};
+
+export const SignInCardButton = () => {
+  return (
+    <SignInButton mode="modal">
+      <Button
+        size="icon"
+        variant="outline" 
+        aria-label="Sign in to favorite"
+        title="Sign in to favorite"
+      >
+        <Heart className="h-5 w-5" />
+      </Button>
+    </SignInButton>
+  );
+};
