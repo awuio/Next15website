@@ -96,3 +96,16 @@ export const createLandmarkAction = async (
 
   redirect("/");
 };
+
+export const fetchLandmarks = async (
+  //search
+) => {
+  //code body
+  const landmarks = await db.landmark.findMany({
+    orderBy: {
+      createdAt: "desc",
+    },
+  });
+
+  return landmarks;
+};
