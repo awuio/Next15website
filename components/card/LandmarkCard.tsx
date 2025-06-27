@@ -8,7 +8,7 @@ const LandmarkCard = ({ landmark }: { landmark: LandmarkCardProps }) => {
     landmark;
   return (
     <article className="group relative">
-      <div className="relative h-[300px] bg-red-300 mb-2 ">
+      <div className="relative h-[300px] mb-2 ">
         <Image
           src={image}
           sizes="(max-width:768px) 100vw, 50vw "
