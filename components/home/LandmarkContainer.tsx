@@ -2,13 +2,21 @@ import { fetchLandmarks } from "@/actions/actions";
 import LandmarkList from "./LandmarkList";
 import { LandmarkCardProps } from "@/utils/types";
 import Hero from "../hero/Hero";
-const LandmarkContainer = async () => {
-  const landmarks: LandmarkCardProps[] = await fetchLandmarks();
+import CategoriesList from "./CategoriesList";
+const LandmarkContainer = async ({
+  search, 
+  category
+}: {
+  search?: string;
+  category?: string;
+}) => {
+  const landmarks: LandmarkCardProps[] = await fetchLandmarks({ search, category });
   // console.log(landmarks);
 
   return (
     <div>
-      <Hero landmarks={landmarks}/>
+      <Hero landmarks={landmarks} />
+      <CategoriesList search={search} category={category}/>
       <LandmarkList landmarks={landmarks} />
     </div>
   );
