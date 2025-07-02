@@ -3,6 +3,8 @@ import FavoriteToggleButton from "@/components/card/FavoriteToggleButton";
 import Breadcrums from "@/components/landmark/Breadcrums";
 import Description from "@/components/landmark/Description";
 import ImageContainer from "@/components/landmark/ImageContainer";
+import ShareButton from "@/components/landmark/ShareButton";
+import MapLandmark from "@/components/map/MapLandmark";
 import { redirect } from "next/navigation";
 
 const LandmarkDetail = async ({ params }: { params: { id: string } }) => {
@@ -17,7 +19,7 @@ const LandmarkDetail = async ({ params }: { params: { id: string } }) => {
       <header className="flex justify-between mt-4 items-center">
         <h1 className="text-4xl font-semibold capitalize">{landmark.name}</h1>
         <div className="flex items-center gap-x-4">
-          <span>share</span>
+          <ShareButton landmarkId={landmark.id} name={landmark.name}/>
           <FavoriteToggleButton landmarkId={landmark.id} />
         </div>
       </header>
@@ -27,8 +29,11 @@ const LandmarkDetail = async ({ params }: { params: { id: string } }) => {
       <section>
         <div>
           <Description description={landmark.description} />
+      <MapLandmark location={{lat:landmark.lat, lng:landmark.lng}}/>
         </div>
+      
       </section>
+      
     </section>
   );
 };
